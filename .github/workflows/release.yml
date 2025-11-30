@@ -23,6 +23,13 @@ jobs:
       - name: Publish self-contained
         run: dotnet publish ./Mp3Rename.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o out
 
+      - name: Create Git tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ github.event.inputs.tag }}
+          git push origin ${{ github.event.inputs.tag }}
+
       - name: Create Release
         id: create_release
         uses: dimi7rof/create-release@v3
