@@ -18,15 +18,6 @@ A single-file .NET 9 console application that:
 - Before: `Êåáà - Ïèòàø çà ìåí [www.example.com].mp3`
 - After: `Keba - Pitash za men (320kbps).mp3`
 
-## **Usage**
-
-1. Clone the repository:
-
-```bash
-git clone <repo-url>
-cd mp3-renamer
-```
-
 ## Notes
 
 - Bitrate is added only if available.
